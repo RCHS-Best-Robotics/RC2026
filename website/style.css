@@ -12,6 +12,8 @@
 	margin-bottom: 20px;
 	line-height: 1em;
   font-weight: bold;
+  text-shadow: 0px 0px 7px rgb(255, 255, 255);
+  transition: transform 0.7s ease;
 }
 * {
 	-webkit-box-sizing: border-box;
@@ -24,10 +26,16 @@ body {
 	font-family: "Electrolize", sans-serif;
 	line-height: 1.75em;
 	font-size: 18px;
-	background-color: #222;
+	background:linear-gradient(to bottom right, #400000, #000000);
 	color: #d6d6d6 !important;
 	margin: 0px;
   	padding: 0px;
+}
+
+/* solves gradient loop issue */
+html, body {
+  height: 100%;
+  min-height: 100vh;
 }
 
 .simple-container {
@@ -70,12 +78,15 @@ h2 {
 	line-height: 25px;
 	padding-top: 0px;
 	line-height: 1em;
+  text-shadow: 0px 0px 4px rgb(255, 160, 160);
+  transition: transform 0.7s ease;
 }
 
 h3 {
 	font-size: 30px;
 	line-height: 27px;
 	padding-top: 0px;
+  
 
 
 }
@@ -142,7 +153,7 @@ ul {
       list-style-type: none;
       margin: 0px;
       padding: 0px;
-      background: linear-gradient(to right, #e84e4e, #661111);
+      background: linear-gradient(to right, #00000000, #e84e4e, #00000000);
       position: fixed;
       top: 0;
       width: 100%;
@@ -194,7 +205,7 @@ ul {
 
 
 .text-box {
-  background-color: #7773ac21;
+  background-color: #7773ac00;
   padding: 15px;
   border-radius: 5px;
   display: inline-block;
@@ -244,4 +255,16 @@ margin: 0 auto;
   margin-top: -4px;
   aspect-ratio: 1/1;
 
+}
+
+
+
+/* ANIMATIONS */
+
+h2:hover {
+  transform: scale(1.05);
+}
+
+#title:hover {
+  transform: scale(1.2);
 }
