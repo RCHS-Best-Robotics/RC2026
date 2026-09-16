@@ -7,10 +7,11 @@
 
 #title{
 	text-align: center;
-	font-size: 60px;
+	font-size: 70px;
 	margin-top: 0cqw;
 	margin-bottom: 20px;
 	line-height: 1em;
+  font-weight: bold;
 }
 * {
 	-webkit-box-sizing: border-box;
@@ -141,18 +142,19 @@ ul {
       list-style-type: none;
       margin: 0px;
       padding: 0px;
-      background-color: #7773ac;
+      background: linear-gradient(to right, #e84e4e, #661111);
       position: fixed;
       top: 0;
       width: 100%;
 	  font-size: 15px;
       display: flex;
-      justify-content: left;
+      justify-content: center;
+      align-items: center;
     }
 
     /* each nav item */
     #navigation li {
-      border-right: 1px solid white;
+      border-right: 1px solid rgba(255, 255, 255, 0);
 	  height: 50px;
     }
 
@@ -162,11 +164,19 @@ ul {
 
     /* links */
     #navigation li a {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 	  height: 50px;
       padding: 15px 10px;
       color: white;
       text-decoration: none;
+    }
+
+    /* icons in nav */
+    #navigation img {
+      verttical-align: middle;
+      filter: brightness(0) invert(1);
     }
 
 #footer{      
