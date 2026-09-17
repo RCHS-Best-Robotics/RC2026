@@ -101,14 +101,14 @@ p {
 
 hr {
 	height: 1px;
-	background-color: #d8d8d8;
+	background-color: #d8d8d862;
 	border: none;
 	width: 100%;
 	margin: 0px;
 }
 
 a[href] {
-	color: #aaa;
+	color: #ffa9a943;
 }
 
 a[href]:hover {
@@ -310,3 +310,4 @@ h2:hover {
 #title:hover {
   transform: scale(1.2);
 }
+
