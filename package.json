@@ -1,0 +1,15 @@
+{
+    "name": "rc2026",
+    "version": "1.0.0",
+    "description": "Main repository for all Rock Canyon BEST Robotics",
+    "private": true,
+    "scripts": {
+      "dev": "lite-server --baseDir website"
+    },
+    "keywords": [],
+    "author": "RC Best Robotics Team 2026",
+    "license": "ISC",
+    "devDependencies": {
+      "lite-server": "^2.6.1"
+    }
+  }
