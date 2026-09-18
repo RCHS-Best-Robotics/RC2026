@@ -21,6 +21,8 @@
 }
 
 
+
+
 body {
 	text-align: center;
 	font-family: "Electrolize", sans-serif;
@@ -33,6 +35,19 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   padding: 0 15px;
+}
+
+table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#event-table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100px;
 }
 
 /* solves gradient loop issue */
