@@ -12,8 +12,13 @@ from vex import *
 
 # Brain should be defined by default
 brain=Brain()
+controller=Controller(PRIMARY)
 
-brain.screen.print("Hello V5")
+brain.screen.print("new code ARMED")
 
+motor1 = Motor(Ports.PORT1, GearSetting.RATIO_18_1, False)
 
-        
+if controller.buttonR1.pressing():
+       
+        motor1.spin(FORWARD, 60, PERCENT)
+        brain.screen.print("MOTOR SPINNING")
