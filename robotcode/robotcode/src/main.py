@@ -2,17 +2,13 @@
 #                                                                              #
 # 	Module:       main.py                                                      #
 # 	Author:       matth                                                        #
-# 	Created:      9/25/2026, 3:58:52 PM                                        #
-# 	Description:  V5 project
-#   Version:      Dulce de Leche 2                                                   #
+# 	Created:      10/18/2026, 11:54:50 AM                                       #
+# 	Description:  V5 project                                                   #
 #                                                                              #
 # ---------------------------------------------------------------------------- #
 
 # Library imports
-from token import PERCENT
-
-
-from vex import * 
+from vex import *
 import time
 
 # Brain should be defined by default
@@ -162,3 +158,5 @@ while True:
             drive(0,0)
 
 wait(20,MSEC)
+
+        
