@@ -18,17 +18,10 @@ controller=Controller(PRIMARY)
 # Set the mode
 mode = "manual"
 drive_mode = "arcade"
+mult_speed = 1
 
 DEADZONE = 5 #Deadzone for joystick inputs
 FORKLIFT_SPEED = 60
-
-# Testing and brain print code
-brain.screen.clear_screen()
-brain.screen.set_cursor(1,1)
-brain.screen.print("Dulce de Leche 2 by Rock Canyon BEST") 
-
-brain.screen.new_line()
-brain.screen.print("Mode: " + mode)
 
 # Motor definitions
 left_motor = Motor(Ports.PORT1, GearSetting.RATIO_18_1, False)
@@ -55,23 +48,27 @@ def spin_motor(motor, speed, stopping=BRAKE):
         motor.spin(REVERSE, -speed, PERCENT)
 
 def drive(left_speed, right_speed):
-    spin_motor(left_motor, left_speed)
-    spin_motor(right_motor, right_speed)
+    spin_motor(left_motor, (left_speed * mult_speed))
+    spin_motor(right_motor, (right_speed * mult_speed))
 
 def update_display():
     brain.screen.clear_screen()
     brain.screen.set_cursor(1,1)
-    brain.screen.print("Dulce de Leche 2 by Rock Canyon BEST")
+    brain.screen.print("Dulce de Leche 3 by Rock Canyon BEST")
     brain.screen.new_line()
     brain.screen.print("Mode: " + mode)
     brain.screen.new_line()
     brain.screen.print("Drive Mode: " + drive_mode)
+    brain.screen.new_line()
+    brain.screen.print("Speed: " + str(mult_speed) + "x")
 
     controller.screen.clear_screen()
     controller.screen.set_cursor(1,1)
     controller.screen.print("Mode: "+ mode)
     controller.screen.set_cursor(2,1)
     controller.screen.print("Drive Mode: "+ drive_mode)
+    controller.screen.set_cursor(3,1)
+    controller.screen.print("Speed: " + str(mult_speed) + "x")
 
 # BUTTON EVENTS
 
@@ -103,10 +100,23 @@ def toggle_drive_mode():
     drive(0,0)
     update_display()
 
+def toggle_mult_speed():
+    global mult_speed
+    
+    if mult_speed == 1:
+        mult_speed = 2
+    elif mult_speed == 2:
+        mult_speed = 0.5
+    else:
+        mult_speed = 1
+
+    drive(0,0)
+    update_display()
+
 # toggles
 controller.buttonA.pressed(toggle_mode)
 controller.buttonB.pressed(toggle_drive_mode)
-
+controller.buttonX.pressed(toggle_mult_speed)
 update_display()
 
 # Main control loop
@@ -145,6 +155,7 @@ while True:
         # now we in auto mode
         # Function definitions for autonomous mode
         forklift_motor.stop(HOLD)  # Stop the forklift motor in auto mode
+        mult_speed = 1  # Reset speed multiplier in auto mode
 
         if controller.buttonUp.pressing():
             drive(10,10)
