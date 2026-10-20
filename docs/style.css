@@ -1,6 +1,6 @@
 
 .electrolize-regular {
-  font-family: "Electrolize", sans-serif;
+  font-family: "Playfair", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -28,7 +28,7 @@ body {
 	font-family: "Electrolize", sans-serif;
 	line-height: 1.75em;
 	font-size: 18px;
-	background:linear-gradient(to bottom right, #400000, #000000);
+	background:linear-gradient(to bottom right, #02ceaf, #000000);
 	color: #d6d6d6 !important;
 	margin: 0px;
   	padding: 0px;
@@ -171,7 +171,7 @@ ul {
       list-style-type: none;
       margin: 0px;
       padding: 0px;
-      background: linear-gradient(to right, #00000000, #e84e4e, #00000000);
+      background: linear-gradient(to right, #00000000, #4ec4e8, #00000000);
       position: fixed;
       top: 0;
       width: 100%;
