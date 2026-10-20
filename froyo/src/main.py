@@ -9,6 +9,7 @@
 
 # Library imports
 from vex import *
+from vex import Brain, Controller, Ports, Motor, GearSetting, AiVision, FORWARD, REVERSE, PERCENT, BRAKE, HOLD, MSEC, wait
 
 # Brain should be defined by default
 brain=Brain()
@@ -57,7 +58,7 @@ def update_display():
     if display_screen == "main":
         brain.screen.clear_screen()
         brain.screen.set_cursor(1,1)
-        brain.screen.print("FroYo 1 by Rock Canyon BEST")
+        brain.screen.print("FroYo 4 by Rock Canyon BEST")
         brain.screen.new_line()
         brain.screen.print("Mode: " + mode)
         brain.screen.new_line()
@@ -89,15 +90,6 @@ def update_display():
             brain.screen.print("No tags detected")
 
 # BUTTON EVENTS
-
-def toggle_display():
-    global display_screen
-
-    if display_screen == "main":
-        display_screen = "vision"
-    elif display_screen == "vision":
-        display_screen = "main"
-update_display()
 
 def toggle_mode():
     global mode
@@ -148,13 +140,10 @@ def toggle_mult_speed():
     display_screen = "main"
     update_display()
 
-
-
 # toggles
 controller.buttonA.pressed(toggle_mode)
 controller.buttonB.pressed(toggle_drive_mode)
 controller.buttonX.pressed(toggle_mult_speed)
-controller.buttonY.pressed(toggle_display)
 update_display()
 
 # Main control loop
@@ -201,8 +190,6 @@ while True:
         wait(20, MSEC)
 
     elif mode == "auto":
-        # now we in auto mode
-        # Function definitions for autonomous mode
         forklift_motor.stop(HOLD)  # Stop the forklift motor in auto mode
         mult_speed = 1  # Reset speed multiplier in auto mode
 
